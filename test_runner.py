@@ -41,11 +41,13 @@ class TestAssignmentFour(unittest.TestCase):
         A = np.array([1, 2, 2, 4]).reshape(2, 2)
         self.assertFalse(ex.is_invertible(A))
         B = np.array([5, 5, 6, 6]).reshape(2, 2)
-        self.assertTrue(ex.is_invertible(B))
-        C = np.array([3, 6, 6, 12]).reshape(2, 2)
-        self.assertFalse(ex.is_invertible(C))
+        self.assertFalse(ex.is_invertible(B))
+        C = np.array([5, 6, 7, 8]).reshape(2, 2)
+        self.assertTrue(ex.is_invertible(C))
         D = np.array([7, 8, 9, 10]).reshape(2, 2)
         self.assertTrue(ex.is_invertible(D))
+        E = np.array([5, 10, 10, 20]).reshape(2, 2)
+        self.assertFalse(ex.is_invertible(E))
     def test_04_create_diagonal_split_matrix(self):
         np.testing.assert_array_equal(ex.create_diagonal_split_matrix(2, 5566),
         np.array([[   0, 5566],
